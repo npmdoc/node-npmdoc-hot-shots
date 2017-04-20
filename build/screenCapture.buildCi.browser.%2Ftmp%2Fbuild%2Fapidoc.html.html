@@ -1,0 +1,1260 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a>hot-shots (v4.4.0)</a>
+</h1>
+<h4>Node.js client for StatsD, DogStatsD, and Telegraf</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hot-shots">module hot-shots</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.hot-shots">
+            function <span class="apidocSignatureSpan"></span>hot-shots
+            <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD">
+            function <span class="apidocSignatureSpan">hot-shots.</span>StatsD
+            <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">hot-shots.</span>StatsD.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hot-shots.StatsD">module hot-shots.StatsD</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.StatsD">
+            function <span class="apidocSignatureSpan">hot-shots.</span>StatsD
+            <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.hot-shots.StatsD.prototype">module hot-shots.StatsD.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype._send">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>_send
+            <span class="apidocSignatureSpan">(message, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.check">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>check
+            <span class="apidocSignatureSpan">(name, status, options, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.childClient">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>childClient
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.close">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.decrement">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>decrement
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.enqueue">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>enqueue
+            <span class="apidocSignatureSpan">(message, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.event">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>event
+            <span class="apidocSignatureSpan">(title, text, options, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.flushQueue">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>flushQueue
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.gauge">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>gauge
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.histogram">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>histogram
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.increment">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>increment
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.onBufferFlushInterval">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>onBufferFlushInterval
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.send">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>send
+            <span class="apidocSignatureSpan">(message, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.sendAll">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>sendAll
+            <span class="apidocSignatureSpan">(stat, value, type, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.sendMessage">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>sendMessage
+            <span class="apidocSignatureSpan">(message, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.sendStat">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>sendStat
+            <span class="apidocSignatureSpan">(stat, value, type, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.set">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>set
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.timing">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>timing
+            <span class="apidocSignatureSpan">(stat, time, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.hot-shots.StatsD.prototype.unique">
+            function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>unique
+            <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hot-shots" id="apidoc.module.hot-shots">module hot-shots</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.hot-shots" id="apidoc.element.hot-shots.hot-shots">
+        function <span class="apidocSignatureSpan"></span>hot-shots
+        <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hot-shots = function (host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate) {
+  var options = host || {},
+         self = this;
+
+  if(arguments.length &gt; 1 || typeof(host) === 'string'){
+    options = {
+      host        : host,
+      port        : port,
+      prefix      : prefix,
+      suffix      : suffix,
+      globalize   : globalize,
+      cacheDns    : cacheDns,
+      mock        : mock === true,
+      globalTags  : globalTags,
+      maxBufferSize : maxBufferSize,
+      bufferFlushInterval: bufferFlushInterval,
+      telegraf    : telegraf,
+      sampleRate    : sampleRate
+    };
+  }
+
+  this.host        = options.host || 'localhost';
+  this.port        = options.port || 8125;
+  this.prefix      = options.prefix || '';
+  this.suffix      = options.suffix || '';
+  this.socket      = options.isChild ? options.socket : dgram.createSocket('udp4');
+  this.mock        = options.mock;
+  this.globalTags  = Array.isArray(options.globalTags) ? options.globalTags : [];
+  this.telegraf    = options.telegraf || false;
+  this.maxBufferSize = options.maxBufferSize || 0;
+  this.sampleRate  = options.sampleRate || 1;
+  this.bufferFlushInterval = options.bufferFlushInterval || 1000;
+  this.bufferHolder = options.isChild ? options.bufferHolder : { buffer: "" };
+  this.errorHandler = options.errorHandler;
+
+  // We only want a single flush event per parent and all its child clients
+  if(!options.isChild &amp;&amp; this.maxBufferSize &gt; 0) {
+    this.intervalHandle = setInterval(this.onBufferFlushInterval.bind(this), this.bufferFlushInterval);
+  }
+
+  if (options.isChild) {
+    if (options.dnsError) {
+      this.dnsError = options.dnsError;
+    }
+  } else if (options.cacheDns === true){
+    dns.lookup(options.host, function(err, address, family){
+      if(err === null){
+        self.host = address;
+      } else {
+        self.dnsError = err;
+      }
+    });
+  }
+
+  if (!options.isChild &amp;&amp; options.errorHandler) {
+    this.socket.on('error', options.errorHandler);
+  }
+
+  if(options.globalize){
+    global.statsd = this;
+  }
+
+  this.CHECKS = {
+    OK: 0,
+    WARNING: 1,
+    CRITICAL: 2,
+    UNKNOWN: 3,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD" id="apidoc.element.hot-shots.StatsD">
+        function <span class="apidocSignatureSpan">hot-shots.</span>StatsD
+        <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StatsD = function (host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate) {
+  var options = host || {},
+         self = this;
+
+  if(arguments.length &gt; 1 || typeof(host) === 'string'){
+    options = {
+      host        : host,
+      port        : port,
+      prefix      : prefix,
+      suffix      : suffix,
+      globalize   : globalize,
+      cacheDns    : cacheDns,
+      mock        : mock === true,
+      globalTags  : globalTags,
+      maxBufferSize : maxBufferSize,
+      bufferFlushInterval: bufferFlushInterval,
+      telegraf    : telegraf,
+      sampleRate    : sampleRate
+    };
+  }
+
+  this.host        = options.host || 'localhost';
+  this.port        = options.port || 8125;
+  this.prefix      = options.prefix || '';
+  this.suffix      = options.suffix || '';
+  this.socket      = options.isChild ? options.socket : dgram.createSocket('udp4');
+  this.mock        = options.mock;
+  this.globalTags  = Array.isArray(options.globalTags) ? options.globalTags : [];
+  this.telegraf    = options.telegraf || false;
+  this.maxBufferSize = options.maxBufferSize || 0;
+  this.sampleRate  = options.sampleRate || 1;
+  this.bufferFlushInterval = options.bufferFlushInterval || 1000;
+  this.bufferHolder = options.isChild ? options.bufferHolder : { buffer: "" };
+  this.errorHandler = options.errorHandler;
+
+  // We only want a single flush event per parent and all its child clients
+  if(!options.isChild &amp;&amp; this.maxBufferSize &gt; 0) {
+    this.intervalHandle = setInterval(this.onBufferFlushInterval.bind(this), this.bufferFlushInterval);
+  }
+
+  if (options.isChild) {
+    if (options.dnsError) {
+      this.dnsError = options.dnsError;
+    }
+  } else if (options.cacheDns === true){
+    dns.lookup(options.host, function(err, address, family){
+      if(err === null){
+        self.host = address;
+      } else {
+        self.dnsError = err;
+      }
+    });
+  }
+
+  if (!options.isChild &amp;&amp; options.errorHandler) {
+    this.socket.on('error', options.errorHandler);
+  }
+
+  if(options.globalize){
+    global.statsd = this;
+  }
+
+  this.CHECKS = {
+    OK: 0,
+    WARNING: 1,
+    CRITICAL: 2,
+    UNKNOWN: 3,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hot-shots.StatsD" id="apidoc.module.hot-shots.StatsD">module hot-shots.StatsD</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.StatsD" id="apidoc.element.hot-shots.StatsD.StatsD">
+        function <span class="apidocSignatureSpan">hot-shots.</span>StatsD
+        <span class="apidocSignatureSpan">(host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StatsD = function (host, port, prefix, suffix, globalize, cacheDns, mock, globalTags, maxBufferSize, bufferFlushInterval, telegraf, sampleRate) {
+  var options = host || {},
+         self = this;
+
+  if(arguments.length &gt; 1 || typeof(host) === 'string'){
+    options = {
+      host        : host,
+      port        : port,
+      prefix      : prefix,
+      suffix      : suffix,
+      globalize   : globalize,
+      cacheDns    : cacheDns,
+      mock        : mock === true,
+      globalTags  : globalTags,
+      maxBufferSize : maxBufferSize,
+      bufferFlushInterval: bufferFlushInterval,
+      telegraf    : telegraf,
+      sampleRate    : sampleRate
+    };
+  }
+
+  this.host        = options.host || 'localhost';
+  this.port        = options.port || 8125;
+  this.prefix      = options.prefix || '';
+  this.suffix      = options.suffix || '';
+  this.socket      = options.isChild ? options.socket : dgram.createSocket('udp4');
+  this.mock        = options.mock;
+  this.globalTags  = Array.isArray(options.globalTags) ? options.globalTags : [];
+  this.telegraf    = options.telegraf || false;
+  this.maxBufferSize = options.maxBufferSize || 0;
+  this.sampleRate  = options.sampleRate || 1;
+  this.bufferFlushInterval = options.bufferFlushInterval || 1000;
+  this.bufferHolder = options.isChild ? options.bufferHolder : { buffer: "" };
+  this.errorHandler = options.errorHandler;
+
+  // We only want a single flush event per parent and all its child clients
+  if(!options.isChild &amp;&amp; this.maxBufferSize &gt; 0) {
+    this.intervalHandle = setInterval(this.onBufferFlushInterval.bind(this), this.bufferFlushInterval);
+  }
+
+  if (options.isChild) {
+    if (options.dnsError) {
+      this.dnsError = options.dnsError;
+    }
+  } else if (options.cacheDns === true){
+    dns.lookup(options.host, function(err, address, family){
+      if(err === null){
+        self.host = address;
+      } else {
+        self.dnsError = err;
+      }
+    });
+  }
+
+  if (!options.isChild &amp;&amp; options.errorHandler) {
+    this.socket.on('error', options.errorHandler);
+  }
+
+  if(options.globalize){
+    global.statsd = this;
+  }
+
+  this.CHECKS = {
+    OK: 0,
+    WARNING: 1,
+    CRITICAL: 2,
+    UNKNOWN: 3,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.hot-shots.StatsD.prototype" id="apidoc.module.hot-shots.StatsD.prototype">module hot-shots.StatsD.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype._send" id="apidoc.element.hot-shots.StatsD.prototype._send">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>_send
+        <span class="apidocSignatureSpan">(message, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_send = function (message, callback) {
+  // we may have a cached error rather than a cached lookup, so
+  // throw it on
+  if (this.dnsError) {
+    if (callback) {
+      return callback(this.dnsError);
+    }
+    else if (this.errorHandler) {
+      return this.errorHandler(this.dnsError);
+    }
+    throw this.dnsError;
+  }
+
+  // Only send this stat if we're not a mock Client.
+  if(!this.mock) {
+    if(this.maxBufferSize === 0) {
+      this.sendMessage(message, callback);
+    }
+    else {
+      this.enqueue(message, callback);
+    }
+  }
+  else {
+    if(typeof callback === 'function'){
+      callback(null, 0);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.check" id="apidoc.element.hot-shots.StatsD.prototype.check">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>check
+        <span class="apidocSignatureSpan">(name, status, options, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">check = function (name, status, options, tags, callback) {
+  if (this.telegraf) {
+    var err = new Error('Not supported by Telegraf / InfluxDB');
+    if (callback) {
+      return callback(err);
+    }
+    else if (this.errorHandler) {
+      return this.errorHandler(err);
+    }
+
+    throw err;
+  }
+  var check = ['_sc', name, status],
+    metadata = options || {};
+
+  if (metadata.date_happened) {
+    var timestamp = formatDate(metadata.date_happened);
+    if (timestamp) {
+      check.push('d:' + timestamp);
+    }
+  }
+  if (metadata.hostname) {
+    check.push('h:' + metadata.hostname);
+  }
+
+  var mergedTags = this.globalTags;
+  if (tags &amp;&amp; Array.isArray(tags)) {
+    mergedTags = overrideTags(mergedTags, tags);
+  }
+  if (mergedTags.length &gt; 0) {
+    check.push('#' + mergedTags.join(','));
+  }
+
+  // message has to be the last part of a service check
+  if (metadata.message) {
+    check.push('m:' + metadata.message);
+  }
+
+  // allow for tags to be omitted and callback to be used in its place
+  if(typeof tags === 'function' &amp;&amp; callback === undefined) {
+    callback = tags;
+  }
+
+  var message = check.join('|');
+  // Service checks are unique in that message has to be the last element in
+  // the stat if provided, so we can't append tags like other checks. This
+  // directly calls the `_send` method to avoid appending tags, since we've
+  // already added them.
+  this._send(message, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+client.set('my_unique', 'foobar');
+client.unique('my_unique', 'foobarbaz');
+
+// Event: sends the titled event (DataDog only)
+client.event('my_title', 'description');
+
+// Check: sends a service check (DataDog only)
+client.<span class="apidocCodeKeywordSpan">check</span>('service.up', client.CHECKS.OK, { hostname: 'host-1' }, [&amp;#
+x27;foo', 'bar'])
+
+// Incrementing multiple items
+client.increment(['these', 'are', 'different', 'stats']);
+
+// Sampling, this will sample 25% of the time the StatsD Daemon will compensate for sampling
+client.increment('my_counter', 1, 0.25);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.childClient" id="apidoc.element.hot-shots.StatsD.prototype.childClient">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>childClient
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">childClient = function (options) {
+  return new ChildClient(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+client.histogram('my_histogram', 42, 0.25, ['tag']);
+client.histogram('my_histogram', 42, 0.25, next);
+client.histogram('my_histogram', 42, ['tag'], next);
+client.histogram('my_histogram', 42, 0.25, ['tag'], next);
+
+// Use a child client to add more context to the client.
+// Clients can be nested.
+var childClient = client.<span class="apidocCodeKeywordSpan">childClient</span>({
+  prefix: 'additionalPrefix.',
+  suffix: '.additionalSuffix',
+  globalTags: ['globalTag1:forAllMetricsFromChildClient']
+});
+childClient.increment('my_counter_with_more_tags');
+
+// Close statsd.  This will ensure all stats are sent and stop statsd
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.close" id="apidoc.element.hot-shots.StatsD.prototype.close">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function (callback){
+  if(this.intervalHandle) {
+    clearInterval(this.intervalHandle);
+  }
+
+  this.flushQueue();
+
+  if (callback) {
+    // use the close event rather than adding a callback to close()
+    // because that API is not available in older Node versions
+    this.socket.on('close', callback);
+  }
+
+  try {
+    this.socket.close();
+  }
+  catch (err) {
+    var errMessage = 'Error closing hot-shots socket: ' + err;
+    if (callback) {
+      callback(new Error(errMessage));
+    }
+    else if (this.errorHandler) {
+      this.errorHandler(new Error(errMessage));
+    }
+    else {
+      console.log(errMessage);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    suffix: '.additionalSuffix',
+    globalTags: ['globalTag1:forAllMetricsFromChildClient']
+  });
+  childClient.increment('my_counter_with_more_tags');
+
+  // Close statsd.  This will ensure all stats are sent and stop statsd
+  // from doing anything more.
+  client.<span class="apidocCodeKeywordSpan">close</span>(function(err) {
+    console.log('The close did not work quite right: ', err);
+  });
+```
+
+## DogStatsD and Telegraf functionality
+
+Some of the functionality mentioned above is specific to DogStatsD or Telegraf.  They will not do anything if you are using the
+regular statsd client.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.decrement" id="apidoc.element.hot-shots.StatsD.prototype.decrement">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>decrement
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decrement = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, -value || -1, 'c', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Timing: sends a timing command with the specified milliseconds
+client.timing('response_time', 42);
+
+// Increment: Increments a stat by a value (default is 1)
+client.increment('my_counter');
+
+// Decrement: Decrements a stat by a value (default is -1)
+client.<span class="apidocCodeKeywordSpan">decrement</span>('my_counter');
+
+// Histogram: send data for histogram stat (DataDog and Telegraf only)
+client.histogram('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.gauge('my_gauge', 123.45);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.enqueue" id="apidoc.element.hot-shots.StatsD.prototype.enqueue">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>enqueue
+        <span class="apidocSignatureSpan">(message, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">enqueue = function (message, callback){
+  message += "\n";
+
+  if (this.bufferHolder.buffer.length + message.length &gt; this.maxBufferSize) {
+    this.flushQueue(callback);
+    this.bufferHolder.buffer += message;
+  }
+  else {
+    this.bufferHolder.buffer += message;
+    if (callback) {
+      callback(null);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.event" id="apidoc.element.hot-shots.StatsD.prototype.event">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>event
+        <span class="apidocSignatureSpan">(title, text, options, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">event = function (title, text, options, tags, callback) {
+  if (this.telegraf) {
+    var err = new Error('Not supported by Telegraf / InfluxDB');
+    if (callback) {
+      return callback(err);
+    }
+    else if (this.errorHandler) {
+      return this.errorHandler(err);
+    }
+
+    throw err;
+  }
+
+  // Convert to strings
+  var message,
+      msgTitle = String(title ? title : ''),
+      msgText = String(text ? text : msgTitle);
+  // Escape new lines (unescaping is supported by DataDog)
+  msgText = msgText.replace(/\n/g, '\\n');
+
+  // start out the message with the event-specific title and text info
+  message = '_e{' + msgTitle.length + ',' + msgText.length + '}:' + msgTitle + '|' + msgText;
+
+  // add in the event-specific options
+  if (options) {
+    if (options.date_happened) {
+      var timestamp = formatDate(options.date_happened);
+      if (timestamp) {
+        message += '|d:' + timestamp;
+      }
+    }
+    if (options.hostname) {
+      message += '|h:' + options.hostname;
+    }
+    if (options.aggregation_key) {
+      message += '|k:' + options.aggregation_key;
+    }
+    if (options.priority) {
+      message += '|p:' + options.priority;
+    }
+    if (options.source_type_name) {
+      message += '|s:' + options.source_type_name;
+    }
+    if (options.alert_type) {
+      message += '|t:' + options.alert_type;
+    }
+  }
+
+  // allow for tags to be omitted and callback to be used in its place
+  if(typeof tags === 'function' &amp;&amp; callback === undefined) {
+    callback = tags;
+  }
+
+  this.send(message, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+client.gauge('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.set('my_unique', 'foobar');
+client.unique('my_unique', 'foobarbaz');
+
+// Event: sends the titled event (DataDog only)
+client.<span class="apidocCodeKeywordSpan">event</span>('my_title', 'description');
+
+// Check: sends a service check (DataDog only)
+client.check('service.up', client.CHECKS.OK, { hostname: 'host-1' }, ['foo', 'bar'])
+
+// Incrementing multiple items
+client.increment(['these', 'are', 'different', 'stats']);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.flushQueue" id="apidoc.element.hot-shots.StatsD.prototype.flushQueue">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>flushQueue
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flushQueue = function (callback){
+  this.sendMessage(this.bufferHolder.buffer, callback);
+  this.bufferHolder.buffer = "";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.gauge" id="apidoc.element.hot-shots.StatsD.prototype.gauge">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>gauge
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">gauge = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value, 'g', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Decrement: Decrements a stat by a value (default is -1)
+client.decrement('my_counter');
+
+// Histogram: send data for histogram stat (DataDog and Telegraf only)
+client.histogram('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.<span class="apidocCodeKeywordSpan">gauge</span>('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.set('my_unique', 'foobar');
+client.unique('my_unique', 'foobarbaz');
+
+// Event: sends the titled event (DataDog only)
+client.event('my_title', 'description');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.histogram" id="apidoc.element.hot-shots.StatsD.prototype.histogram">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>histogram
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">histogram = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value, 'h', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Increment: Increments a stat by a value (default is 1)
+client.increment('my_counter');
+
+// Decrement: Decrements a stat by a value (default is -1)
+client.decrement('my_counter');
+
+// Histogram: send data for histogram stat (DataDog and Telegraf only)
+client.<span class="apidocCodeKeywordSpan">histogram</span>('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.gauge('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.set('my_unique', 'foobar');
+client.unique('my_unique', 'foobarbaz');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.increment" id="apidoc.element.hot-shots.StatsD.prototype.increment">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>increment
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">increment = function (stat, value, sampleRate, tags, callback) {
+  // we explicitly check for undefined and null (and don't do a "! value" check)
+  // so that 0 values are allowed and sent through as-is
+  if (value === undefined || value === null) {
+    value = 1;
+  }
+  this.sendAll(stat, value, 'c', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.error("Error in socket: ", error);
+});
+
+// Timing: sends a timing command with the specified milliseconds
+client.timing('response_time', 42);
+
+// Increment: Increments a stat by a value (default is 1)
+client.<span class="apidocCodeKeywordSpan">increment</span>('my_counter');
+
+// Decrement: Decrements a stat by a value (default is -1)
+client.decrement('my_counter');
+
+// Histogram: send data for histogram stat (DataDog and Telegraf only)
+client.histogram('my_histogram', 42);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.onBufferFlushInterval" id="apidoc.element.hot-shots.StatsD.prototype.onBufferFlushInterval">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>onBufferFlushInterval
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onBufferFlushInterval = function () {
+  this.flushQueue();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.send" id="apidoc.element.hot-shots.StatsD.prototype.send">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>send
+        <span class="apidocSignatureSpan">(message, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (message, tags, callback) {
+  var mergedTags = this.globalTags;
+  if(tags &amp;&amp; Array.isArray(tags)){
+    mergedTags = overrideTags(mergedTags, tags);
+  }
+  if(mergedTags.length &gt; 0){
+    if (this.telegraf) {
+      message = message.split(':');
+      message = message[0] + ',' + mergedTags.join(',').replace(/:/g, '=') + ':' + message.slice(1).join(':');
+    } else {
+      message += '|#' + mergedTags.join(',');
+    }
+  }
+  this._send(message, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.sendAll" id="apidoc.element.hot-shots.StatsD.prototype.sendAll">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>sendAll
+        <span class="apidocSignatureSpan">(stat, value, type, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendAll = function (stat, value, type, sampleRate, tags, callback){
+  var completed = 0,
+      calledback = false,
+      sentBytes = 0,
+      self = this;
+
+  if(sampleRate &amp;&amp; typeof sampleRate !== 'number'){
+    callback = tags;
+    tags = sampleRate;
+    sampleRate = undefined;
+  }
+
+  if(tags &amp;&amp; !Array.isArray(tags)){
+    callback = tags;
+    tags = undefined;
+  }
+
+<span class="apidocCodeCommentSpan">  /**
+   * Gets called once for each callback, when all callbacks return we will
+   * call back from the function
+   * @private
+   */
+</span>  function onSend(error, bytes){
+    completed += 1;
+    if(calledback){
+      return;
+    }
+
+    if(error){
+      if (typeof callback === 'function') {
+        calledback = true;
+        callback(error);
+      }
+      else if (self.errorHandler) {
+        calledback = true;
+        self.errorHandler(error);
+      }
+      return;
+    }
+
+    sentBytes += bytes;
+    if(completed === stat.length &amp;&amp; typeof callback === 'function'){
+      callback(null, sentBytes);
+    }
+  }
+
+  if(Array.isArray(stat)){
+    stat.forEach(function(item){
+      self.sendStat(item, value, type, sampleRate, tags, onSend);
+    });
+  } else {
+    this.sendStat(stat, value, type, sampleRate, tags, callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.sendMessage" id="apidoc.element.hot-shots.StatsD.prototype.sendMessage">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>sendMessage
+        <span class="apidocSignatureSpan">(message, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendMessage = function (message, callback){
+  // Guard against "RangeError: Offset into buffer too large" in node 0.10
+  // https://github.com/nodejs/node-v0.x-archive/issues/7884
+  if (message === "") {
+    if (callback) {
+      callback(null);
+    }
+    return;
+  }
+  var buf = new Buffer(message);
+  try {
+    this.socket.send(buf, 0, buf.length, this.port, this.host, callback);
+  }
+  catch(err) {
+    var errMessage = 'Error sending hot-shots message: ' + err;
+    if (callback) {
+      callback(new Error(errMessage));
+    }
+    else if (this.errorHandler) {
+      this.errorHandler(new Error(errMessage));
+    }
+    else {
+      console.log(errMessage);
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.sendStat" id="apidoc.element.hot-shots.StatsD.prototype.sendStat">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>sendStat
+        <span class="apidocSignatureSpan">(stat, value, type, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendStat = function (stat, value, type, sampleRate, tags, callback) {
+  var message = this.prefix + stat + this.suffix + ':' + value + '|' + type;
+
+  sampleRate = sampleRate || this.sampleRate;
+  if(sampleRate &amp;&amp; sampleRate &lt; 1){
+    if(Math.random() &lt; sampleRate){
+      message += '|@' + sampleRate;
+    } else {
+      //don't want to send if we don't meet the sample ratio
+      return callback ? callback() : undefined;
+    }
+  }
+  this.send(message, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.set" id="apidoc.element.hot-shots.StatsD.prototype.set">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>set
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value, 's', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Histogram: send data for histogram stat (DataDog and Telegraf only)
+client.histogram('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.gauge('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.<span class="apidocCodeKeywordSpan">set</span>('my_unique', 'foobar');
+client.unique('my_unique', 'foobarbaz');
+
+// Event: sends the titled event (DataDog only)
+client.event('my_title', 'description');
+
+// Check: sends a service check (DataDog only)
+client.check('service.up', client.CHECKS.OK, { hostname: 'host-1' }, ['foo', 'bar'])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.timing" id="apidoc.element.hot-shots.StatsD.prototype.timing">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>timing
+        <span class="apidocSignatureSpan">(stat, time, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">timing = function (stat, time, sampleRate, tags, callback) {
+  this.sendAll(stat, time, 'ms', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Catch socket errors so they don't go unhandled, as explained
+// in the Errors section below
+client.socket.on('error', function(error) {
+  console.error("Error in socket: ", error);
+});
+
+// Timing: sends a timing command with the specified milliseconds
+client.<span class="apidocCodeKeywordSpan">timing</span>('response_time', 42);
+
+// Increment: Increments a stat by a value (default is 1)
+client.increment('my_counter');
+
+// Decrement: Decrements a stat by a value (default is -1)
+client.decrement('my_counter');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.hot-shots.StatsD.prototype.unique" id="apidoc.element.hot-shots.StatsD.prototype.unique">
+        function <span class="apidocSignatureSpan">hot-shots.StatsD.prototype.</span>unique
+        <span class="apidocSignatureSpan">(stat, value, sampleRate, tags, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unique = function (stat, value, sampleRate, tags, callback) {
+  this.sendAll(stat, value, 's', sampleRate, tags, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+client.histogram('my_histogram', 42);
+
+// Gauge: Gauge a stat by a specified amount
+client.gauge('my_gauge', 123.45);
+
+// Set: Counts unique occurrences of a stat (alias of unique)
+client.set('my_unique', 'foobar');
+client.<span class="apidocCodeKeywordSpan">unique</span>('my_unique', 'foobarbaz');
+
+// Event: sends the titled event (DataDog only)
+client.event('my_title', 'description');
+
+// Check: sends a service check (DataDog only)
+client.check('service.up', client.CHECKS.OK, { hostname: 'host-1' }, ['foo', 'bar'])
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
