@@ -1,6 +1,6 @@
 # npmdoc-hot-shots
 
-#### api documentation for  hot-shots (v4.4.0)  [![npm package](https://img.shields.io/npm/v/npmdoc-hot-shots.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hot-shots) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hot-shots.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hot-shots)
+#### basic api documentation for  [hot-shots (v4.4.0)](https://github.com/brightcove/hot-shots#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-hot-shots.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-hot-shots) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-hot-shots.svg)](https://travis-ci.org/npmdoc/node-npmdoc-hot-shots)
 
 #### Node.js client for StatsD, DogStatsD, and Telegraf
 
@@ -21,15 +21,41 @@
 ```json
 
 {
-    "name": "hot-shots",
-    "description": "Node.js client for StatsD, DogStatsD, and Telegraf",
-    "version": "4.4.0",
-    "author": "Steve Ivy",
+    "author": {
+        "name": "Steve Ivy"
+    },
+    "bugs": {
+        "url": "https://github.com/brightcove/hot-shots/issues"
+    },
     "contributors": [
-        "Russ Bradberry <rbradberry@gmail.com>",
-        "Brian Deitte <bdeitte@gmail.com>",
-        "Mikhail Mazurskiy <mikhail.mazursky@gmail.com>"
+        {
+            "name": "Russ Bradberry"
+        },
+        {
+            "name": "Brian Deitte"
+        },
+        {
+            "name": "Mikhail Mazurskiy"
+        }
     ],
+    "dependencies": {},
+    "description": "Node.js client for StatsD, DogStatsD, and Telegraf",
+    "devDependencies": {
+        "jshint": "2.x",
+        "mocha": "2.x"
+    },
+    "directories": {
+        "lib": "./lib/"
+    },
+    "dist": {
+        "shasum": "ab3f3b3df2f4b2ff0d716837569241ede81d9175",
+        "tarball": "https://registry.npmjs.org/hot-shots/-/hot-shots-4.4.0.tgz"
+    },
+    "engines": {
+        "node": ">=0.8.0"
+    },
+    "gitHead": "0c2428d916c7335a6820af40aaf276d521292bc1",
+    "homepage": "https://github.com/brightcove/hot-shots#readme",
     "keywords": [
         "statsd",
         "dogstatsd",
@@ -37,30 +63,25 @@
         "metrics",
         "telegraf"
     ],
+    "license": "MIT",
+    "maintainers": [
+        {
+            "name": "bdeitte"
+        }
+    ],
+    "name": "hot-shots",
+    "optionalDependencies": {},
     "repository": {
         "type": "git",
         "url": "git://github.com/brightcove/hot-shots.git"
     },
-    "bugs": {
-        "url": "https://github.com/brightcove/hot-shots/issues"
-    },
-    "directories": {
-        "lib": "./lib/"
-    },
-    "engines": {
-        "node": ">=0.8.0"
-    },
     "scripts": {
-        "test": "mocha -R spec",
         "lint": "jshint lib/**.js test/**.js",
-        "pretest": "npm run lint"
+        "pretest": "npm run lint",
+        "test": "mocha -R spec"
     },
-    "dependencies": {},
-    "devDependencies": {
-        "jshint": "2.x",
-        "mocha": "2.x"
-    },
-    "license": "MIT"
+    "version": "4.4.0",
+    "bin": {}
 }
 ```
 
