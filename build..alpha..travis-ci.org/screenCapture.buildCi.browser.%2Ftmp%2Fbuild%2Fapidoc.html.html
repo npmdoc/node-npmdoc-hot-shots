@@ -47,7 +47,7 @@
 }
 </style>
 <h1>api documentation for
-    <a>hot-shots (v4.4.0)</a>
+    <a href="https://github.com/brightcove/hot-shots#readme">hot-shots (v4.4.0)</a>
 </h1>
 <h4>Node.js client for StatsD, DogStatsD, and Telegraf</h4>
 <div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
@@ -564,7 +564,23 @@
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ }
+
+ var message = check.join('|');
+ // Service checks are unique in that message has to be the last element in
+ // the stat if provided, so we can't append tags like other checks. This
+ // directly calls the `_send` method to avoid appending tags, since we've
+ // already added them.
+ this.<span class="apidocCodeKeywordSpan">_send</span>(message, callback);
+};
+
+/**
+* Send on an event
+* @param title {String} The title of the event
+* @param text {String} The description of the event.  Optional- title is used if not given.
+* @param options
+...</pre></li>
     </ul>
 
 
@@ -787,7 +803,23 @@ client.gauge('my_gauge', 123.45);
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Only send this stat if we're not a mock Client.
+if(!this.mock) {
+  if(this.maxBufferSize === 0) {
+    this.sendMessage(message, callback);
+  }
+  else {
+    this.<span class="apidocCodeKeywordSpan">enqueue</span>(message, callback);
+  }
+}
+else {
+  if(typeof callback === 'function'){
+    callback(null, 0);
+  }
+}
+...</pre></li>
     </ul>
 
 
@@ -885,7 +917,23 @@ client.increment(['these', 'are', 'different', 'stats']);
   this.sendMessage(this.bufferHolder.buffer, callback);
   this.bufferHolder.buffer = "";
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param message {String} The constructed message without tags
+ */
+Client.prototype.enqueue = function(message, callback){
+message += "\n";
+
+if (this.bufferHolder.buffer.length + message.length &gt; this.maxBufferSize) {
+  this.<span class="apidocCodeKeywordSpan">flushQueue</span>(callback);
+  this.bufferHolder.buffer += message;
+}
+else {
+  this.bufferHolder.buffer += message;
+  if (callback) {
+    callback(null);
+  }
+...</pre></li>
     </ul>
 
 
@@ -1024,7 +1072,23 @@ client.histogram('my_histogram', 42);
   }
   this._send(message, callback);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ }
+
+ // allow for tags to be omitted and callback to be used in its place
+ if(typeof tags === 'function' &amp;&amp; callback === undefined) {
+   callback = tags;
+ }
+
+ this.<span class="apidocCodeKeywordSpan">send</span>(message, tags, callback);
+};
+
+/**
+* Checks if stats is an array and sends all stats calling back once all have sent
+* @param stat {String|Array} The stat(s) to send
+* @param value The value to send
+* @param type The type of the metric
+...</pre></li>
     </ul>
 
 
@@ -1090,7 +1154,23 @@ client.histogram('my_histogram', 42);
     this.sendStat(stat, value, type, sampleRate, tags, callback);
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param stat {String|Array} The stat(s) to send
+* @param time {Number} The time in milliseconds to send
+* @param sampleRate {Number=} The Number of times to sample (0 to 1). Optional.
+* @param tags {Array=} The Array of tags to add to metrics. Optional.
+* @param callback {Function=} Callback when message is done being delivered. Optional.
+*/
+Client.prototype.timing = function (stat, time, sampleRate, tags, callback) {
+ this.<span class="apidocCodeKeywordSpan">sendAll</span>(stat, time, 'ms', sampleRate, tags, callback);
+};
+
+/**
+* Increments a stat by a specified amount
+* @param stat {String|Array} The stat(s) to send
+* @param value The value to send
+* @param sampleRate {Number=} The Number of times to sample (0 to 1). Optional.
+...</pre></li>
     </ul>
 
 
@@ -1128,7 +1208,23 @@ client.histogram('my_histogram', 42);
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  throw this.dnsError;
+}
+
+// Only send this stat if we're not a mock Client.
+if(!this.mock) {
+  if(this.maxBufferSize === 0) {
+    this.<span class="apidocCodeKeywordSpan">sendMessage</span>(message, callback);
+  }
+  else {
+    this.enqueue(message, callback);
+  }
+}
+else {
+  if(typeof callback === 'function'){
+...</pre></li>
     </ul>
 
 
@@ -1154,7 +1250,23 @@ client.histogram('my_histogram', 42);
   }
   this.send(message, tags, callback);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if(completed === stat.length &amp;&amp; typeof callback === 'function'){
+      callback(null, sentBytes);
+    }
+  }
+
+  if(Array.isArray(stat)){
+    stat.forEach(function(item){
+      self.<span class="apidocCodeKeywordSpan">sendStat</span>(item, value, type, sampleRate, tags, onSend);
+    });
+  } else {
+    this.sendStat(stat, value, type, sampleRate, tags, callback);
+  }
+};
+
+/**
+...</pre></li>
     </ul>
 
 
